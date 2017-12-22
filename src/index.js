@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 import registerServiceWorker from './registerServiceWorker';
-import App from './App';
+import App from './defront/App';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
