@@ -3,7 +3,7 @@ import  { PropTypes } from 'prop-types';
 
 
 import { connect } from 'react-redux';
-import { addTodo, setVisibilityFilter, VisibilityFilters } from 'actions/demo';
+import { addTodo, setVisibilityFilter, VisibilityFilters } from './demo';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import Footer from './Footer';

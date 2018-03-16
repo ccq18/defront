@@ -3,7 +3,7 @@ import {findDOMNode} from 'react-dom';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo} from 'actions/demo';
+import { addTodo} from './demo';
 
 class AddTodo extends Component {
   render() {

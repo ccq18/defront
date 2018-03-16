@@ -1,24 +1,32 @@
-import React, {Component} from 'react';
-import AppTodo from './components/apptodo/AppTodo';
-import Page from './components/Page';
+import React from 'react';
+
 
 import {
-  BrowserRouter,
-  Route,
-  Switch,
+    Switch,
+    BrowserRouter as Router,
+    Route,
 } from 'react-router-dom';
+import AllPage from './demos/AllPage'
+import DemoRoutes from './demos/pages/Routes'
+import TodoApp from './demos/todos/TodoApp'
+import MinTodoApp from './demos/mintodos/MinTodoApp'
 
-class Routes extends Component {
-  render() {
-    return (
-        <BrowserRouter>
-          <Switch>
-          {/*<Route path="/app" component={AppTodo}/>*/}
-          <Route path="*" component={AppTodo}/>
-          </Switch>
-        </BrowserRouter>
-    );
-  }
-}
+
+const Routes = () => (
+    <Router>
+        <Switch>
+            <Route path="/demos" component={DemoRoutes}/>
+            <Route path="/todoapp" component={TodoApp}/>
+
+            <Route path="/mintodo" component={MinTodoApp}/>
+
+
+            <Route path="/" component={AllPage}/>
+
+        </Switch>
+    </Router>
+);
+
 
 export default Routes;
+
