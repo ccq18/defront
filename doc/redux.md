@@ -113,6 +113,39 @@ const App = ()=>{
 export default App;
 
 ```
+###  组件导出时使用connect连接redux
+
+export connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+mapStateToProps是一个函数。它的作用就是像它的名字那样，建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
+```
+const mapStateToProps = (state) => {
+  return {
+    todos:state.todos
+  }
+}
+```
+
+mapDispatchToProps是connect函数的第二个参数，用来建立 UI 组件的参数到store.dispatch方法的映射。也就是说，它定义了哪些用户
+的操作应该当作 Action，传给 Store。它可以是一个函数，也可以是一个对象。
+```
+const mapDispatchToProps = (
+  dispatch,
+  ownProps
+) => {
+  return {
+    onClick: () => {
+      dispatch({
+        type: 'SET_VISIBILITY_FILTER',
+        filter: ownProps.filter
+      });
+    }
+  };
+}
+```
 ### demo
 查看mintodos 和todos
 
